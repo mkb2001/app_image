@@ -3,10 +3,10 @@ version: '3.8'
 services:
   web:
     build:
-      context: ./app
+      context: ./our_app
     command: gunicorn hello_django.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - static_volume:/home/app/web/staticfiles
+      - static_volume:/home/our_app/web/staticfiles
     expose:
       - 8000
    
@@ -15,7 +15,7 @@ services:
   nginx:
     build: ./nginx
     volumes:
-      - static_volume:/home/app/web/staticfiles
+      - static_volume:/home/our_app/web/staticfiles
     ports:
       - 1337:80
     depends_on:
