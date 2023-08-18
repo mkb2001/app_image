@@ -72,29 +72,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'our_app.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# DATABASES = { 
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'sfjyumaqaqraaaufavdioaox',
-#         'USER': 'tsbfwyzjnnraplhr',
-#         'PASSWORD': '00,ZJTNVfcLqhOCmI>lI7LuBkAVrpT-w',
-#         'HOST': '102.134.147.233',
-#         'PORT': '32764',
-#     }
-# }
-
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dgcrjnylfysfjzcwfogmtnxr',
-        'USER': 'rlgvxyeqevqpikwk',
-        'PASSWORD': 'RUxr84=CMexzoI+x65z<Ugx#dzm#ocgq',
-        'HOST': '102.134.147.233',  
-        'PORT': '32761',  
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': '34.30.99.254',
+        'USER': 'group-s',
+        'PASSWORD': 'kevin',
+        'NAME': 'recess_project',
     }
 }
 

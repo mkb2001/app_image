@@ -1,25 +1,21 @@
-# Use an official Python runtime as a parent image
-FROM python:3.11.4
+# pull official base image
+FROM python:3.11.4-slim-buster
 
-# Install any needed packages specified in requirements.txt
-COPY requirements.txt /app/
-RUN pip install --no-cache-dir -r /app/requirements.txt
+# set work directory
+WORKDIR /usr/src/app
 
-# Set the working directory to /app
-WORKDIR /app
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+ENV HOME=/home/app
+ENV APP_HOME=/home/app/web
+RUN mkdir $APP_HOME
+RUN mkdir $APP_HOME/staticfiles
+WORKDIR $APP_HOME
+# install dependencies
+RUN pip install --upgrade pip
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt
 
-# Copy the rest of the application code
-COPY . /app
-
-# Install Nginx
-RUN apt-get update && \
-    apt-get install -y nginx
-
-# Copy Nginx configuration
-COPY nginx/default.conf /etc/nginx/sites-available/default
-
-# Expose port 80 to the outside world
-EXPOSE 80
-
-# Run the application
-CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
+# copy project
+COPY . .
