@@ -5,3 +5,4 @@ Pillow==10.0.0
 psycopg2-binary==2.9.7
 reportlab==4.0.4
 sqlparse==0.4.4
+uWSGI>=2.0.18
