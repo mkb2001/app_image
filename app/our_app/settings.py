@@ -73,15 +73,7 @@ WSGI_APPLICATION = 'our_app.wsgi.application'
 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': '34.30.99.254',
-        'USER': 'group-s',
-        'PASSWORD': 'kevin',
-        'NAME': 'recess_project',
-    }
-}
+
 
 
 
